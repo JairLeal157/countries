@@ -1,5 +1,10 @@
 
 [![CI/CD Pipeline](https://github.com/JairLeal157/countries/actions/workflows/build.yml/badge.svg?branch=main)](https://github.com/JairLeal157/countries/actions/workflows/build.yml)
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=JairLeal157_countries&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=JairLeal157_countries)
+[![Lines of Code](https://sonarcloud.io/api/project_badges/measure?project=JairLeal157_countries&metric=ncloc)](https://sonarcloud.io/summary/new_code?id=JairLeal157_countries)
+[![Coverage](https://sonarcloud.io/api/project_badges/measure?project=JairLeal157_countries&metric=coverage)](https://sonarcloud.io/summary/new_code?id=JairLeal157_countries)
+[![Technical Debt](https://sonarcloud.io/api/project_badges/measure?project=JairLeal157_countries&metric=sqale_index)](https://sonarcloud.io/summary/new_code?id=JairLeal157_countries)
+[![Duplicated Lines (%)](https://sonarcloud.io/api/project_badges/measure?project=JairLeal157_countries&metric=duplicated_lines_density)](https://sonarcloud.io/summary/new_code?id=JairLeal157_countries)
 # countries
 
 "Aplicación desarrollada en Spring Boot enfocada en monedas de países, con un proceso de integración y entrega continua (CI/CD) gestionado mediante GitHub Actions. Incluye análisis estático de código a través de SonarCloud y Jacoco, y se despliega en Amazon Web Services (AWS)."
