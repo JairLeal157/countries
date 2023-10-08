@@ -6,9 +6,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.ArrayNode;
 import com.github.javafaker.Faker;
 import com.github.javafaker.Nation;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.Arrays;
 import java.util.Locale;
@@ -24,12 +22,12 @@ public class DataController {
     public String getVersion() {
         return "0.0.1";
     }
-    @GetMapping(path = "/RandomNations")
-    public JsonNode getRandomNations() {
+    @GetMapping(path = "/RandomNations/{size}")
+    public JsonNode getRandomNations(@PathVariable int size) {
         ObjectMapper mapper = new ObjectMapper();
         Faker faker = new Faker(new Locale("es"));
         ArrayNode nations = mapper.createArrayNode();
-        for (int i = 0; i < 10; i++) {
+        for (int i = 0; i < size; i++) {
             Nation nation = faker.nation();
             nations.add(mapper.createObjectNode()
                     .put("Nacionalidad", nation.nationality())
@@ -39,12 +37,12 @@ public class DataController {
         }
         return nations;
     }
-    @GetMapping(path = "/RandomCurrencies")
-    public JsonNode getRandomCurrencies() {
+    @GetMapping(path = "/RandomCurrencies/{size}")
+    public JsonNode getRandomCurrencies(@PathVariable int size) {
         ObjectMapper mapper = new ObjectMapper();
         Faker faker = new Faker(new Locale("es"));
         ArrayNode currencies = mapper.createArrayNode();
-        for (int i = 0; i < 10; i++) {
+        for (int i = 0; i < size; i++) {
             currencies.add(mapper.createObjectNode()
                     .put("Moneda", faker.currency().name())
                     .put("Código", faker.currency().code()));
