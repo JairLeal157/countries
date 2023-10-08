@@ -1,4 +1,7 @@
+
+[![CI/CD Pipeline](https://github.com/JairLeal157/countries/actions/workflows/build.yml/badge.svg?branch=main)](https://github.com/JairLeal157/countries/actions/workflows/build.yml)
 # countries
+
 "Aplicación desarrollada en Spring Boot enfocada en monedas de países, con un proceso de integración y entrega continua (CI/CD) gestionado mediante GitHub Actions. Incluye análisis estático de código a través de SonarCloud y Jacoco, y se despliega en Amazon Web Services (AWS)."
 
 Implementation of a Simple App with the next operations:
