@@ -15,7 +15,13 @@
 	<description>App con springboot sobre monedas de paises, pipeline CI/CD con github actions,  analisis de codigo estatico con sonarcloud y jacoco y despliegue en aws</description>
 	<properties>
 		<java.version>11</java.version>
+
+		<sonar.organization>jairleal157</sonar.organization>
+		<sonar.projectKey>JairLeal157_countries</sonar.projectKey>
+		<sonar.host.url>https://sonarcloud.io</sonar.host.url>
+
 	</properties>
+
 	<dependencies>
 
 		<dependency>
