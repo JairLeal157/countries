@@ -12,15 +12,18 @@
 	<artifactId>countries</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>AppCountries</name>
-	<description>+</description>
+	<description>App con springboot sobre monedas de paises, pipeline CI/CD con github actions,  analisis de codigo estatico con sonarcloud y jacoco y despliegue en aws</description>
 	<properties>
 		<java.version>11</java.version>
 	</properties>
 	<dependencies>
+
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
+
+
 		<dependency>
 			<groupId>com.github.javafaker</groupId>
 			<artifactId>javafaker</artifactId>
