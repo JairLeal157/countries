@@ -219,6 +219,7 @@ jobs:
           hosts: ${{ secrets.EC2_USERS }}@${{ secrets.EC2_URL}}
           privateKey: ${{ secrets.EC2_SSH }}
           command: |
+            sudo fuser -k 8080/tcp
             rm -rf ${{ secrets.EC2_TARGET}}/*
 
       - name: Deploy to my EC2 instance
