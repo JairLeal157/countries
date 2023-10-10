@@ -213,6 +213,14 @@ jobs:
 
       #Deploy's job
 
+      - name: Clear EC2 Target Folder Content
+        uses: JimCronqvist/action-ssh@master
+        with:
+          hosts: ${{ secrets.EC2_USERS }}@${{ secrets.EC2_URL}}
+          privateKey: ${{ secrets.EC2_SSH }}
+          command: |
+            rm -rf ${{ secrets.EC2_TARGET}}/*
+
       - name: Deploy to my EC2 instance
 
         uses: easingthemes/ssh-deploy@v2.1.5
@@ -223,3 +231,11 @@ jobs:
           REMOTE_HOST: ${{ secrets.EC2_URL}}
           REMOTE_USER: ${{ secrets.EC2_USERS }}
           TARGET: ${{ secrets.EC2_TARGET}}
+
+      - name: Start Backend App
+        uses: JimCronqvist/action-ssh@master
+        with:
+          hosts: ${{ secrets.EC2_USERS }}@${{ secrets.EC2_URL}}
+          privateKey: ${{ secrets.EC2_SSH }}
+          command: |
+            java -jar ${{ secrets.EC2_TARGET}}/target/countries-0.0.1-SNAPSHOT.jar
