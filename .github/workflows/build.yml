@@ -210,3 +210,16 @@ jobs:
           #From this path
 
           path: target/countries-0.0.1-SNAPSHOT.jar
+
+      #Deploy's job
+
+      - name: Deploy to my EC2 instance
+
+        uses: easingthemes/ssh-deploy@v2.1.5
+
+        env:
+          SSH_PRIVATE_KEY: ${{ secrets.EC2_SSH }}
+          SOURCE: "./"
+          REMOTE_HOST: ${{ secrets.EC2_URL}}
+          REMOTE_USER: ${{ secrets.EC2_USERS }}
+          TARGET: ${{ secrets.EC2_TARGET}}
