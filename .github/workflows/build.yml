@@ -239,6 +239,6 @@ jobs:
           host: ${{ secrets.EC2_URL}}
           username: ${{secrets.EC2_USERS}}
           key: ${{ secrets.EC2_SSH }}
-          command_timeout: "30s"
+          timeout: "30s"
           script: |
             java -jar ${{ secrets.EC2_TARGET}}/target/countries-0.0.1-SNAPSHOT.jar
